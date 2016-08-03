@@ -52,7 +52,7 @@ gulp.task("libs", function () {
         'angular2/bundles/angular2.dev.js',
         'angular2/bundles/router.dev.js'
     ], { cwd: "node_modules/**" }) /* Glob required here. */
-        .pipe(gulp.dest("build/node_modules"));
+        .pipe(gulp.dest("build/lib"));
 });
 
 
