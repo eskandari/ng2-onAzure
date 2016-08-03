@@ -39,6 +39,13 @@ gulp.task("assets", function(){
 });
 
 /**
+ * Build the project.
+ */
+gulp.task("default", ['resources', 'libs'], function () {
+    console.log("Building the project ...");
+});
+
+/**
  * Copy all required libraries into build directory.
  */
 gulp.task("libs", function () {
@@ -52,13 +59,5 @@ gulp.task("libs", function () {
         'angular2/bundles/angular2.dev.js',
         'angular2/bundles/router.dev.js'
     ], { cwd: "node_modules/**" }) /* Glob required here. */
-        .pipe(gulp.dest("build/lib"));
-});
-
-
-/**
- * Build the project.
- */
-gulp.task("default", ['resources', 'libs'], function () {
-    console.log("Building the project ...");
+        .pipe(gulp.dest("build/node_modules"));
 });
